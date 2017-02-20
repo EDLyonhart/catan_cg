@@ -3,5 +3,4 @@
 one:
   name: Sample_user
   email: Sample_Email@example.com
-  password_digest: <%= User.digest('Password!1234') %>
-  games_played: 1
+  password_digest: <%= User.digest('password') %>

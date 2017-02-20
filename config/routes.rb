@@ -6,14 +6,15 @@ Rails.application.routes.draw do
 
   get    '/signup',  to: 'users#new'
 
-  get    '/login',   to: 'login_sessions#new'
-  post   '/login',   to: 'login_sessions#create'
-  delete '/logout',  to: 'login_sessions#destroy'
+  get    '/login',   to: 'sessions#new'
+  post   '/login',   to: 'sessions#create'
+  delete '/logout',  to: 'sessions#destroy'
   
 end
 
 
 #    Prefix Verb   URI Pattern               Controller#Action
+#      root GET    /                         users#new
 #     users GET    /users(.:format)          users#index
 #           POST   /users(.:format)          users#create
 #  new_user GET    /users/new(.:format)      users#new
@@ -23,6 +24,7 @@ end
 #           PUT    /users/:id(.:format)      users#update
 #           DELETE /users/:id(.:format)      users#destroy
 #    signup GET    /signup(.:format)         users#new
-#     login GET    /login(.:format)          login_sessions#new
-#           POST   /login(.:format)          login_sessions#create
-#    logout DELETE /logout(.:format)         login_sessions#destroy
+#
+#     login GET    /login(.:format)          sessions#new
+#           POST   /login(.:format)          sessions#create
+#    logout DELETE /logout(.:format)         sessions#destroy
