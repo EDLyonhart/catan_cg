@@ -1,5 +1,13 @@
 Rails.application.routes.draw do
 
+  get 'players/new'
+
+  get 'players/create'
+
+  get 'players/update'
+
+  get 'players/show'
+
   root 'users#new'
 
   resources :users

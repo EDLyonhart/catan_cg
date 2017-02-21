@@ -1,0 +1,27 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  expansion_stack_id: 1
+  event_stack_id: 1
+  resource_stack_id: 1
+  discard_stack_id: 1
+  player_id: 1
+  front_image: MyString
+  back_image: MyString
+  discarded: false
+  in_play: false
+  is_playable: false
+  type: 
+
+two:
+  expansion_stack_id: 1
+  event_stack_id: 1
+  resource_stack_id: 1
+  discard_stack_id: 1
+  player_id: 1
+  front_image: MyString
+  back_image: MyString
+  discarded: false
+  in_play: false
+  is_playable: false
+  type: 

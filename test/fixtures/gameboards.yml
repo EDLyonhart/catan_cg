@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  game_id: 1
+  remaining_settlements: 1
+  remaining_cities: 1
+  remaining_roads: 1
+
+two:
+  game_id: 1
+  remaining_settlements: 1
+  remaining_cities: 1
+  remaining_roads: 1
