@@ -1,23 +1,28 @@
 require 'test_helper'
 
 class GameboardsControllerTest < ActionDispatch::IntegrationTest
+
+  def setup
+    @gameboard = gameboards(:one)  
+  end
+
   test "should get new" do
-    get gameboards_new_url
+    get new_gameboard_path
     assert_response :success
   end
 
   test "should get create" do
-    get gameboards_create_url
+    get gameboard_path(@gameboard.id)
     assert_response :success
   end
 
   test "should get update" do
-    get gameboards_update_url
+    get gameboard_path(@gameboard.id)
     assert_response :success
   end
 
   test "should get show" do
-    get gameboards_show_url
+    get gameboard_path(@gameboard.id)
     assert_response :success
   end
 
