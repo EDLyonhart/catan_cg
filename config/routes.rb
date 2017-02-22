@@ -1,5 +1,13 @@
 Rails.application.routes.draw do
 
+  get 'games/new'
+
+  get 'games/create'
+
+  get 'games/update'
+
+  get 'games/show'
+
   get 'players/new'
 
   get 'players/create'
