@@ -1,18 +1,23 @@
 require 'test_helper'
 
 class PlayersControllerTest < ActionDispatch::IntegrationTest
+
+  def setup
+    @player = players(:one)
+  end
+
   test "should get new" do
-    get players_new_url
+    get new_player_path
     assert_response :success
   end
 
   test "should get create" do
-    get players_create_url
+    get players_path(@player.id)
     assert_response :success
   end
 
   test "should get update" do
-    get players_update_url
+    get player_path(@player.id)
     assert_response :success
   end
 

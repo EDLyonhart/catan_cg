@@ -5,13 +5,22 @@ class PlayersController < ApplicationController
   end
 
   def create
-    player = Player.new(player_params)
-    if player.save
+    @player = Player.new(player_params)
+
+    if @player.save
       log_in player
-      redirect_to player
+      redirect_to @player
     else
       render 'new'
     end
+  end
+
+  def index
+    @players = Player.all
+  end
+
+  def show
+    @player = Player.find(params[:id])
   end
 
   def update

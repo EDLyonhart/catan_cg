@@ -7,10 +7,14 @@ class GamesController < ApplicationController
   def create
     @game = Game.new(game_params)
     if @game.save
-      redirect_to game_path
+      redirect_to @game
     else
       render 'new'
     end
+  end
+
+  def index
+    @games = Game.all
   end
 
   def update
@@ -23,6 +27,6 @@ class GamesController < ApplicationController
   private
 
     def game_params
-      params.require(:game).permit( :is_finished, :current_turn )
+      params.permit( :is_finished, :current_turn )
     end
 end
