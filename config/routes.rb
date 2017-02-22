@@ -1,5 +1,13 @@
 Rails.application.routes.draw do
 
+  get 'gameboards/new'
+
+  get 'gameboards/create'
+
+  get 'gameboards/update'
+
+  get 'gameboards/show'
+
   get 'turns/new'
 
   get 'turns/create'
