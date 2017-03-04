@@ -1,12 +1,11 @@
 Rails.application.routes.draw do
 
-  get 'turns/new'
-
   get 'turns/create'
 
   get 'turns/update'
   
-  root 'users#new'
+  root 'static_pages#home'
+ 
   resources :players
   resources :users
   resources :games
@@ -22,10 +21,9 @@ end
 
 
 #         Prefix Verb   URI Pattern                    Controller#Action
-#      turns_new GET    /turns/new(.:format)           turns#new
 #   turns_create GET    /turns/create(.:format)        turns#create
 #   turns_update GET    /turns/update(.:format)        turns#update
-#           root GET    /                              users#new
+#           root GET    /                              static_pages#home
 #        players GET    /players(.:format)             players#index
 #                POST   /players(.:format)             players#create
 #     new_player GET    /players/new(.:format)         players#new
