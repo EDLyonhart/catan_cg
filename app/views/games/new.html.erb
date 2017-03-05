@@ -1,4 +1,9 @@
 <% provide(:title, 'New Game') %>
 
-<h1>Games#new</h1>
-<p>Find me in app/views/games/new.html.erb</p>
+<% unless Game.users_by_name(@game.id).size == 2 %>
+
+  <%= form_for :player do |f| %>
+    Player 1 : <%= select_tag "Player 1", options_for_select(Game.users_by_name), {:include_blank => 'select player'} %><br />
+    <%= f.submit %>
+  <% end %>
+<% end %>

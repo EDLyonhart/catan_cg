@@ -1,2 +1,8 @@
-<h1>Players#new</h1>
-<p>Find me in app/views/players/new.html.erb</p>
+
+Create two users in order to start the game.
+
+<%= form_for @player, url: {action: "create"} do |f| %>
+  Uesr Id: <%= f.text_field :user_id %><br />
+  Game Id: <%= f.text_field :game_id %><br />
+  <%= f.submit "Create" %>
+<% end %>

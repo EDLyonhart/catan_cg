@@ -1,2 +1,14 @@
-<h1>Games#show</h1>
-<p>Find me in app/views/games/show.html.erb</p>
+<% if Game.players_by_name(@game.id).count == 0 %>
+  
+
+<% elsif Game.players_by_name(@game.id).count == 1 %>
+  add next player
+
+<% elsif Game.players_by_name(@game.id).count == 2 %>  
+  <% Game.players_by_name(@game.id).each do |player| %>
+    <%= player %><br />
+  <% end %>
+
+<% end %>
+
+

@@ -1,18 +1,16 @@
 Rails.application.routes.draw do
 
-  get 'turns/create'
-
-  get 'turns/update'
-  
   root 'static_pages#home'
  
-  resources :players
   resources :users
+  resources :players
   resources :games
   resources :gameboards
 
+  get 'turns/create'
+  get 'turns/update'
+  
   get    '/signup',  to: 'users#new'
-
   get    '/login',   to: 'sessions#new'
   post   '/login',   to: 'sessions#create'
   delete '/logout',  to: 'sessions#destroy'
@@ -24,14 +22,6 @@ end
 #   turns_create GET    /turns/create(.:format)        turns#create
 #   turns_update GET    /turns/update(.:format)        turns#update
 #           root GET    /                              static_pages#home
-#        players GET    /players(.:format)             players#index
-#                POST   /players(.:format)             players#create
-#     new_player GET    /players/new(.:format)         players#new
-#    edit_player GET    /players/:id/edit(.:format)    players#edit
-#         player GET    /players/:id(.:format)         players#show
-#                PATCH  /players/:id(.:format)         players#update
-#                PUT    /players/:id(.:format)         players#update
-#                DELETE /players/:id(.:format)         players#destroy
 #          users GET    /users(.:format)               users#index
 #                POST   /users(.:format)               users#create
 #       new_user GET    /users/new(.:format)           users#new
@@ -40,6 +30,14 @@ end
 #                PATCH  /users/:id(.:format)           users#update
 #                PUT    /users/:id(.:format)           users#update
 #                DELETE /users/:id(.:format)           users#destroy
+#        players GET    /players(.:format)             players#index
+#                POST   /players(.:format)             players#create
+#     new_player GET    /players/new(.:format)         players#new
+#    edit_player GET    /players/:id/edit(.:format)    players#edit
+#         player GET    /players/:id(.:format)         players#show
+#                PATCH  /players/:id(.:format)         players#update
+#                PUT    /players/:id(.:format)         players#update
+#                DELETE /players/:id(.:format)         players#destroy
 #          games GET    /games(.:format)               games#index
 #                POST   /games(.:format)               games#create
 #       new_game GET    /games/new(.:format)           games#new

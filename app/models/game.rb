@@ -4,15 +4,20 @@ class Game < ApplicationRecord
   has_one :gameboard
   has_one :turn
 
-  def find_players
-    players = @game.players
-    
-    @player_1 = players[0]
-    @player_2 = players[1]
-  end
 
-  def find_gameboard
-    @gameboard = Gameboard.find(@game.id)
+  def self.players_by_name(game_id)
+    @users = User.all
+    @players = Player.all
+    names = Array.new
+
+    @players.each do |player|
+      if player.game_id == game_id
+        user = User.find(player.user_id)
+        names << user.name
+      end
+    end
+
+    names
   end
 
 end

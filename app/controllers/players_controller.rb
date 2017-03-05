@@ -8,15 +8,11 @@ class PlayersController < ApplicationController
     @player = Player.new(player_params)
 
     if @player.save
-      log_in player
-      redirect_to @player
+      # log_in player
+      redirect_to game_path(Player.last.game_id)
     else
-      render 'new'
+      redirect_to game_path(Player.last.game_id)
     end
-  end
-
-  def index
-    @players = Player.all
   end
 
   def show
