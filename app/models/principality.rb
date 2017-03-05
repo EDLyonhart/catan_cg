@@ -37,7 +37,7 @@ class Principality < ApplicationRecord
                   ]
   end
 
-  def display_useful
+  def return_playable_principality
 
     to_show = []
 
