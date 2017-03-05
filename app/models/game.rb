@@ -1,7 +1,5 @@
 class Game < ApplicationRecord
 
-  require 'pry'
-
   has_many :players
   has_one :gameboard
   has_one :turn

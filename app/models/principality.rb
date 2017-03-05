@@ -6,6 +6,8 @@ class Principality < ApplicationRecord
 
   serialize :layout, Array
 
+  before_save :starting_layout
+
   def starting_layout
 
     self.layout = [
