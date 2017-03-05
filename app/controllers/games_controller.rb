@@ -27,6 +27,10 @@ class GamesController < ApplicationController
     if Game.players_by_name(@game.id).count != 2
       redirect_to new_player_path
     end
+
+    @players = Player.where(game_id: @game.id)
+    @player1 = @players.first
+    @player2 = @players.last
   end
 
   private

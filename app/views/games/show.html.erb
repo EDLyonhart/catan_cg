@@ -4,10 +4,18 @@
 <% elsif Game.players_by_name(@game.id).count == 1 %>
   add next player
 
-<% elsif Game.players_by_name(@game.id).count == 2 %>  
-  <% Game.players_by_name(@game.id).each do |player| %>
-    <%= player %><br />
-  <% end %>
+<% elsif Game.players_by_name(@game.id).count == 2 %>
+  <% @gameboard = Gameboard.find_by(game_id: @game.id) %>
+
+  Player1: <%= @player1.user.name %> <br />
+  <% principality1 = @player1.principality %> <br />
+  <%= principality1.display_useful %> <br />
+
+  <hr />
+
+  Player2: <%= @player2.user.name %> <br />
+  <% principality2 = @player2.principality.layout %> <br />
+  <%= principality1.display_useful %> <br />
 
 <% end %>
 

@@ -31,4 +31,8 @@ class Game < ApplicationRecord
     names
   end
 
+  def show_principality(player_id)
+    @principality = Principality.where(game_id: @game.id, player_id: player_id)
+  end
+
 end

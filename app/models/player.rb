@@ -1,7 +1,5 @@
 class Player < ApplicationRecord
 
-  require 'pry'
-
   belongs_to :user
   belongs_to :game
   has_one :hand

@@ -37,4 +37,19 @@ class Principality < ApplicationRecord
                   ]
   end
 
+  def display_useful
+
+    to_show = []
+
+    self.layout.each do |slot|
+      if slot[:center] != nil  
+        to_show << slot
+      end  
+    end 
+
+    to_show
+  end
+
 end
+
+
