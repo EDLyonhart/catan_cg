@@ -1,6 +1,7 @@
+<!-- add a character -->
 <% if Game.players_by_name(@game.id).count == 0 %>
   
-
+<!-- add a second character -->
 <% elsif Game.players_by_name(@game.id).count == 1 %>
   add next player
 
@@ -8,9 +9,35 @@
   <% @gameboard = Gameboard.find_by(game_id: @game.id) %>
 
   Player1: <%= @player1.user.name %> <br />
-  <% principality1 = @player1.principality.return_playable_principality %> <br />
-  <% principality1.each do |segment| %>
-    <%= segment %> <br />
+  <% @principality = @player1.principality.layout %> <br />
+  <% @principality.each do |segment| %>
+
+    <% if segment[:center] == "available" %>
+      <% @segment = segment %>
+      <div class="main_strip_section">
+      <%= render 'layouts/available_section' %>
+      </div>
+
+    <% elsif segment[:center] == "town" %>
+      <% @segment = segment %>
+      <div class="main_strip_section">
+      <%= render 'layouts/town_section' %>
+      </div>
+
+    <% elsif segment[:center] == "city" %>
+      <% @segment = segment %>
+      <div class="main_strip_section">
+      <%= render 'layouts/city_section' %>
+      </div>
+
+    <% elsif segment[:center] == "road" %>
+      <% @segment = segment %>
+      <div class="main_strip_section">
+      <%= render 'layouts/road_section' %>
+      </div>
+
+    <% end %>
+
   <% end %>
 
   <hr />
@@ -20,7 +47,7 @@
   <% principality2.each do |segment| %>
     <%= segment %> <br />
   <% end %>
-  
+
 <% end %>
 
 
